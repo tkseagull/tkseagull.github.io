@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.main{
+  background-color: #003333;
+  width: 100%;
+  min-height: 100vh; /* set a minimum height instead of height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*background-image: url(images/back2.jpeg);*/
+  background-position: center;
+  background-size: cover;
+  color: black;
+
+  
+}
+h1{
+  text-align: center;
+  color: #ffff64;
+  font-size: 100px;
+}
+.welcome{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 0px;
+}
+.profile-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ffffff40;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+.profile-card2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ffffff40;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  margin-bottom: 100px;
+}
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.image .profile-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.data h2{
+  font-size: 33px;
+  font-weight: 600;
+}
+span{
+  font-size: 18px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.row .info{
+  text-align: center;
+  padding: 0 20px;
+}
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.post {
+  border: 3px solid #0080ff;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
