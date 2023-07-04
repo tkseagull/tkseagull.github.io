@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 			var url = "https://www.reddit.com/r/showerthoughts/top.json?t=week";
 			$.getJSON(url, function(data) {
 				var posts = data.data.children;
@@ -71,6 +71,7 @@ $(document).ready(function() {
 					html += "</li>";
 				}
 				html += "</ul>";
+    */
 				$("#reddit-posts-quotes").html(html);
 			});
 		});
