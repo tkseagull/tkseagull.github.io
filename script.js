@@ -55,13 +55,13 @@
             })
             .catch(error => console.log(error));
 
-        function updateResult(value, cellId) {
-            var cellIdParts = cellId.split('-');
-            var row = parseInt(cellIdParts[1]);
-            var column = parseInt(cellIdParts[2]);
-            var aboveCellValue1 = parseInt(document.getElementById('cell-' + (row - 2) + '-' + column).textContent);
-            var aboveCellValue2 = parseInt(document.getElementById('cell-' + (row - 1) + '-' + column).textContent);
-            var aboveCellValue3 = parseInt(document.getElementById('cell-' + (row - 3) + '-' + column).textContent);
-            var result = aboveCellValue1 * aboveCellValue2 * aboveCellValue3 * value;
-            document.getElementById('result').textContent = result;
-        }
+function updateResult(value, cellId) {
+    var cellIdParts = cellId.split('-');
+    var row = parseInt(cellIdParts[1]);
+    var column = parseInt(cellIdParts[2]);
+    var aboveCellValue1 = parseFloat(document.getElementById('cell-' + (row - 2) + '-' + column).textContent);
+    var aboveCellValue2 = parseFloat(document.getElementById('cell-' + (row - 1) + '-' + column).textContent);
+    var aboveCellValue3 = parseFloat(document.getElementById('cell-' + (row - 3) + '-' + column).textContent);
+    var result = aboveCellValue1 * aboveCellValue2 * aboveCellValue3 * value;
+    document.getElementById('result').textContent = result;
+}
