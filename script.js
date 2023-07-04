@@ -61,6 +61,7 @@
             var column = parseInt(cellIdParts[2]);
             var aboveCellValue1 = parseInt(document.getElementById('cell-' + (row - 2) + '-' + column).textContent);
             var aboveCellValue2 = parseInt(document.getElementById('cell-' + (row - 1) + '-' + column).textContent);
-            var result = aboveCellValue1 * aboveCellValue2 * value;
+            var aboveCellValue3 = parseInt(document.getElementById('cell-' + (row - 3) + '-' + column).textContent);
+            var result = aboveCellValue1 * aboveCellValue2 * aboveCellValue3 * value;
             document.getElementById('result').textContent = result;
         }
