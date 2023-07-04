@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excel to HTML</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 0;
+            text-align: left;
+            position: relative; /* Add position relative */
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 8px; /* Add padding to match the cell */
+            border: none;
+            box-sizing: border-box;
+            position: absolute; /* Set position absolute */
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <table id="excelTable"></table>
+
+    <script>
+        fetch('conversions.csv')
+            .then(response => response.text())
+            .then(data => {
+                var rows = data.split('\n');
+                var excelData = [];
+
+                for (var i = 0; i < rows.length; i++) {
+                    excelData.push(rows[i].split(','));
+                }
+
+                var table = document.getElementById("excelTable");
+                var thead = document.createElement("thead");
+                var headerRow = document.createElement("tr");
+
+                for (var i = 0; i < excelData[0].length; i++) {
+                    var th = document.createElement("th");
+                    th.appendChild(document.createTextNode(excelData[0][i]));
+                    headerRow.appendChild(th);
+                }
+
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                var tbody = document.createElement("tbody");
+
+                for (var i = 1; i < excelData.length; i++) {
+                    var row = document.createElement("tr");
+
+                    for (var j = 0; j < excelData[i].length; j++) {
+                        var cell = document.createElement(i === 0 ? "th" : "td");
+                        var cellId = 'cell-' + i + '-' + j; // Create a unique cell ID
+
+                        if (cellId === 'cell-4-1' || cellId === 'cell-4-2' || cellId === 'cell-4-3' || cellId === 'cell-4-4' || cellId === 'cell-4-5') {
+                            var input = document.createElement("input");
+                            input.setAttribute("type", "text");
+                            input.setAttribute("value", excelData[i][j]);
+                            cell.appendChild(input);
+                        } else {
+                            cell.appendChild(document.createTextNode(excelData[i][j]));
+                        }
+
+                        cell.setAttribute('id', cellId); // Set the ID attribute
+                        row.appendChild(cell);
+                    }
+
+                    tbody.appendChild(row);
+                }
+
+                table.appendChild(tbody);
+            })
+            .catch(error => console.log(error));
+    </script>
+</body>
+</html>
