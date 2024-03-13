@@ -1,1 +1,0 @@
-# tkseagull.github.io
